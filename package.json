@@ -7,7 +7,8 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "check": "node --check script.js && node --check api/availability.js && node --check api/book.js && node --check lib/calendar.js"
+    "check": "node --check script.js && node --check api/availability.js && node --check api/book.js && node --check lib/calendar.js",
+    "build": "npm run check"
   },
   "dependencies": {
     "googleapis": "^189.0.0",

@@ -1061,6 +1061,10 @@ footer { border-top: 1px solid #27282b; }
 #booking-form .privacy-check { color: #9b9da0; }
 .form-success > span { background: rgba(61, 188, 109, .15); }
 
+@media (max-width: 1100px) {
+  .availability-card { display: none; }
+}
+
 @media (max-width: 920px) {
   .desktop-nav.open {
     color: #fff;

@@ -9,7 +9,6 @@ const timeField = bookingForm.querySelector('[name="time"]');
 const formError = bookingForm.querySelector(".form-error");
 const submitButton = bookingForm.querySelector(".form-submit");
 const availabilityCard = document.querySelector(".availability-card");
-const DEMO_FORCE_AVAILABLE = true;
 
 const english = {
   "Badi Garage, torna alla home": "Badi Garage, back to home",
@@ -23,8 +22,7 @@ const english = {
   "CAP": "Postcode",
   "Meccanico professionista al lavoro su un'auto": "Professional mechanic working on a car",
   "Controllo professionale del motore di un'auto": "Professional car engine inspection",
-  "Foto segnaposto di Philip": "Placeholder photo of Philip",
-  "Foto del meccanico": "Mechanic photo",
+  "Philip · Badi Garage": "Philip · Badi Garage",
   "Servizi": "Services",
   "Come funziona": "How it works",
   "Prezzi": "Pricing",
@@ -104,7 +102,7 @@ const english = {
   "esperienza": "experience",
   "Semplice dall’inizio alla fine": "Simple from start to finish",
   "Raccontami il problema": "Tell me the problem",
-  "Inserisci i dati dell’auto, descrivi il guasto e allega una foto se vuoi.": "Enter your car details, describe the problem, and add a photo if you like.",
+  "Inserisci i dati del veicolo e descrivi il guasto in pochi minuti.": "Enter your vehicle details and describe the problem in a few minutes.",
   "Scegli dove e quando": "Choose where and when",
   "A domicilio oppure con ritiro. Seleziona l’orario più comodo per te.": "At your location or with pickup. Choose the time that suits you.",
   "Approva il preventivo": "Approve the quote",
@@ -151,7 +149,7 @@ const english = {
   "Accetto l’informativa privacy e di essere ricontattato.": "I accept the privacy policy and agree to be contacted.",
   "Invia la richiesta": "Send request",
   "Richiesta ricevuta!": "Request received!",
-  "Grazie. Ti ricontatteremo al più presto per confermare l’appuntamento.": "Thank you. We'll contact you shortly to confirm the appointment.",
+  "Grazie. L’appuntamento è in calendario: ti ricontatteremo per confermare i dettagli.": "Thank you. The appointment is on the calendar—we'll contact you to confirm the details.",
   "Perfetto": "Done",
   "CAP, es. 20121": "Postcode, e.g. 20121",
   "Spia accesa, rumore, auto che non parte...": "Warning light, noise, car won't start..."
@@ -201,7 +199,7 @@ function updateMechanicStatus() {
   }).formatToParts(new Date());
   const weekday = parts.find((part) => part.type === "weekday")?.value;
   const hour = Number(parts.find((part) => part.type === "hour")?.value);
-  const isAvailable = DEMO_FORCE_AVAILABLE || (weekday !== "Sun" && hour >= 8 && hour < 19);
+  const isAvailable = weekday !== "Sun" && hour >= 8 && hour < 19;
   const isEnglish = languageSelect.value === "en";
 
   availabilityCard.classList.toggle("is-available", isAvailable);
