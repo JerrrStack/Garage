@@ -260,7 +260,7 @@ async function loadAvailableTimes() {
   try {
     const response = await fetch(`/api/availability?date=${encodeURIComponent(dateField.value)}`);
     const result = await response.json();
-    if (!response.ok) throw new Error(result.error);
+    if (!response.ok) throw new Error(result.error || result.debug || "Availability request failed");
 
     timeField.innerHTML = "";
     if (!result.slots.length) {
@@ -284,13 +284,13 @@ async function loadAvailableTimes() {
       timeField.append(option);
     });
     timeField.disabled = false;
-  } catch {
+  } catch (error) {
     resetTimeField(languageSelect.value === "en"
       ? "Times unavailable"
       : "Orari non disponibili");
-    showFormError(languageSelect.value === "en"
+    showFormError(error.message || (languageSelect.value === "en"
       ? "We couldn't load the calendar. Please try again shortly."
-      : "Impossibile caricare il calendario. Riprova tra poco.");
+      : "Impossibile caricare il calendario. Riprova tra poco."));
   }
 }
 
