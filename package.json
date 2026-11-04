@@ -1,0 +1,16 @@
+{
+  "name": "badi-garage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Badi Garage mobile mechanic website and Google Calendar booking API",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "check": "node --check script.js && node --check api/availability.js && node --check api/book.js && node --check lib/calendar.js"
+  },
+  "dependencies": {
+    "googleapis": "^189.0.0",
+    "luxon": "^3.5.0"
+  }
+}

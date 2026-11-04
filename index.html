@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meccanico mobile a Milano. Riparazioni a domicilio o ritiro e riconsegna della tua auto.">
+  <title>Badi Garage — Il meccanico viene da te</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Badi Garage, torna alla home">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span>Badi<span>Garage</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navigazione principale">
+      <a href="#servizi">Servizi</a>
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#prezzi">Prezzi</a>
+      <a href="#chi-sono">Chi sono</a>
+    </nav>
+    <div class="header-actions">
+      <label class="language-picker" aria-label="Seleziona lingua">
+        <span aria-hidden="true">◎</span>
+        <select id="language-select">
+          <option value="it">IT</option>
+          <option value="en">EN</option>
+        </select>
+      </label>
+      <a class="phone-link" href="tel:+390212345678">
+        <span class="status-dot"></span>
+        02 1234 5678
+      </a>
+      <button class="button button-small open-booking" type="button">Prenota ora</button>
+      <button class="menu-toggle" type="button" aria-label="Apri menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-ambient"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span></span> Meccanico mobile · Milano e provincia</div>
+        <h1>La tua auto si ferma.<br><em>Tu no.</em></h1>
+        <p class="hero-copy">Auto, moto, furgoni e camion: vengo io da te oppure ritiro il veicolo. Meccanica e climatizzazione con preventivi chiari e zero sorprese.</p>
+        <div class="hero-actions">
+          <button class="button open-booking" type="button">
+            Prenota un intervento
+            <span aria-hidden="true">↗</span>
+          </button>
+          <a class="text-link" href="#come-funziona">
+            Come funziona
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div class="avatar-stack" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="">
+          </div>
+          <div>
+            <div class="stars" aria-label="5 stelle su 5">★★★★★ <strong>4.9</strong></div>
+            <p>Scelto da oltre 480 automobilisti</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=88" alt="Meccanico professionista al lavoro su un'auto">
+        <div class="image-shade"></div>
+        <div class="availability-card is-available">
+          <div class="mechanic-avatar mechanic-placeholder" role="img" aria-label="Foto segnaposto di Philip">P</div>
+          <div class="mechanic-status-copy">
+            <span class="mechanic-name">Philip</span>
+            <strong class="availability-label">Disponibile ora</strong>
+            <span class="availability-detail">Meccanico certificato · 15+ anni</span>
+          </div>
+          <span class="availability-dot" aria-hidden="true"></span>
+        </div>
+        <div class="service-area-card">
+          <span class="pin-icon">⌖</span>
+          <div>
+            <span>Area di servizio</span>
+            <strong>Milano + 30 km</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-booking">
+        <div class="quick-intro">
+          <span>01</span>
+          <div>
+            <strong>Di cosa hai bisogno?</strong>
+            <small>Seleziona il tipo di intervento</small>
+          </div>
+        </div>
+        <label>
+          <span>Servizio</span>
+          <select id="quick-service">
+            <option>Diagnosi e riparazione</option>
+            <option>Tagliando completo</option>
+            <option>Batteria e avviamento</option>
+            <option>Freni e sospensioni</option>
+            <option>Ritiro e riconsegna</option>
+            <option>Moto e scooter</option>
+            <option>Camion e veicoli commerciali</option>
+            <option>Climatizzazione auto e camion</option>
+          </select>
+        </label>
+        <label>
+          <span>La tua zona</span>
+          <input id="quick-postcode" type="text" inputmode="numeric" maxlength="5" placeholder="CAP, es. 20121">
+        </label>
+        <button class="quick-submit" type="button">
+          Verifica disponibilità
+          <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="proof-bar" aria-label="I nostri vantaggi">
+      <div><span>✓</span><strong>Preventivo prima di iniziare</strong></div>
+      <div><span>✓</span><strong>12 mesi di garanzia</strong></div>
+      <div><span>✓</span><strong>Ricambi certificati</strong></div>
+      <div><span>✓</span><strong>Pagamento sicuro</strong></div>
+    </section>
+
+    <section class="brand-section" aria-labelledby="brand-title">
+      <div class="brand-section-copy">
+        <span class="section-kicker">Esperienza multimarca</span>
+        <h2 id="brand-title">Marche che assistiamo</h2>
+        <p>Manutenzione, diagnosi e riparazioni sui marchi più diffusi a Milano.</p>
+      </div>
+      <div class="vehicle-brands" aria-label="Marche automobilistiche assistite">
+        <span>FIAT</span>
+        <span>ALFA ROMEO</span>
+        <span>LANCIA</span>
+        <span>VOLKSWAGEN</span>
+        <span>AUDI</span>
+        <span>BMW</span>
+        <span>MERCEDES-BENZ</span>
+        <span>RENAULT</span>
+        <span>PEUGEOT</span>
+        <span>CITROËN</span>
+        <span>TOYOTA</span>
+        <span>FORD</span>
+      </div>
+      <p class="brand-disclaimer">I marchi appartengono ai rispettivi proprietari. Badi Garage è un servizio indipendente.</p>
+    </section>
+
+    <section class="section services" id="servizi">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">Servizi senza stress</span>
+          <h2>Un’officina, ovunque<br>ti trovi.</h2>
+        </div>
+        <p>Dalla manutenzione ordinaria alla climatizzazione. Assistenza per auto, moto, furgoni e camion.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card featured">
+          <span class="service-number">01</span>
+          <div class="service-icon">⌂</div>
+          <h3>Meccanico a domicilio</h3>
+          <p>Interventi direttamente dove si trova la tua auto. Niente attese, niente carro attrezzi.</p>
+          <ul>
+            <li>Diagnosi elettronica</li>
+            <li>Batteria e avviamento</li>
+            <li>Tagliando e manutenzione</li>
+          </ul>
+          <button class="card-link open-booking" type="button">Prenota a domicilio <span>→</span></button>
+        </article>
+        <article class="service-card">
+          <span class="service-number">02</span>
+          <div class="service-icon">↔</div>
+          <h3>Ritiro & riconsegna</h3>
+          <p>Ritiro l’auto, la riparo presso la mia officina e te la riporto. Tu continua la tua giornata.</p>
+          <ul>
+            <li>Ritiro con verbale digitale</li>
+            <li>Aggiornamenti fotografici</li>
+            <li>Riconsegna concordata</li>
+          </ul>
+          <button class="card-link open-booking" type="button">Richiedi il ritiro <span>→</span></button>
+        </article>
+        <article class="service-card dark">
+          <span class="service-number">03</span>
+          <div class="service-icon">⚡</div>
+          <h3>Urgenza su strada</h3>
+          <p>Problemi improvvisi? Chiamami e troviamo subito la soluzione più rapida.</p>
+          <div class="emergency-time">
+            <strong>45<span>min</span></strong>
+            <small>tempo medio d’arrivo</small>
+          </div>
+          <a class="card-link" href="tel:+390212345678">Chiama adesso <span>→</span></a>
+        </article>
+        <article class="service-card">
+          <span class="service-number">04</span>
+          <div class="service-icon">◉</div>
+          <h3>Moto & scooter</h3>
+          <p>Manutenzione e riparazioni per moto e scooter, dalla diagnosi al controllo completo.</p>
+          <ul>
+            <li>Tagliando e controllo livelli</li>
+            <li>Freni, batteria e avviamento</li>
+            <li>Diagnosi guasti</li>
+          </ul>
+          <button class="card-link open-booking" type="button">Prenota per la moto <span>→</span></button>
+        </article>
+        <article class="service-card featured">
+          <span class="service-number">05</span>
+          <div class="service-icon">▰</div>
+          <h3>Camion & veicoli commerciali</h3>
+          <p>Assistenza per furgoni e camion, pensata per ridurre i tempi di fermo del veicolo.</p>
+          <ul>
+            <li>Diagnosi meccanica</li>
+            <li>Manutenzione programmata</li>
+            <li>Interventi su strada</li>
+          </ul>
+          <button class="card-link open-booking" type="button">Richiedi assistenza <span>→</span></button>
+        </article>
+        <article class="service-card">
+          <span class="service-number">06</span>
+          <div class="service-icon">❄</div>
+          <h3>Climatizzazione</h3>
+          <p>Diagnosi e riparazione dell’aria condizionata per auto, furgoni e camion.</p>
+          <ul>
+            <li>Ricerca perdite</li>
+            <li>Ricarica climatizzatore</li>
+            <li>Compressore e componenti</li>
+          </ul>
+          <button class="card-link open-booking" type="button">Controlla il climatizzatore <span>→</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="process-section" id="come-funziona">
+      <div class="process-image">
+        <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=85" alt="Controllo professionale del motore di un'auto">
+        <div class="experience-badge"><strong>15+</strong><span>anni di<br>esperienza</span></div>
+      </div>
+      <div class="process-content">
+        <span class="section-kicker light">Semplice dall’inizio alla fine</span>
+        <h2>Come funziona</h2>
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <div><h3>Raccontami il problema</h3><p>Inserisci i dati dell’auto, descrivi il guasto e allega una foto se vuoi.</p></div>
+          </div>
+          <div class="step">
+            <span>02</span>
+            <div><h3>Scegli dove e quando</h3><p>A domicilio oppure con ritiro. Seleziona l’orario più comodo per te.</p></div>
+          </div>
+          <div class="step">
+            <span>03</span>
+            <div><h3>Approva il preventivo</h3><p>Ricevi un prezzo chiaro prima del lavoro. Procedo solo dopo il tuo ok.</p></div>
+          </div>
+          <div class="step">
+            <span>04</span>
+            <div><h3>Torna in strada</h3><p>Segui gli aggiornamenti e paga comodamente a lavoro completato.</p></div>
+          </div>
+        </div>
+        <button class="button button-light open-booking" type="button">Inizia adesso <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="section pricing" id="prezzi">
+      <div class="section-heading centered">
+        <div>
+          <span class="section-kicker">Prezzi trasparenti</span>
+          <h2>Sai sempre quanto spendi.</h2>
+        </div>
+        <p>Nessun costo nascosto. Confermi ogni intervento prima che inizi.</p>
+      </div>
+      <div class="price-grid">
+        <article class="price-card">
+          <span>Da</span><strong>€39</strong><small>+ eventuali ricambi</small>
+          <h3>Diagnosi a domicilio</h3>
+          <p>Controllo completo e identificazione del problema.</p>
+        </article>
+        <article class="price-card highlighted">
+          <div class="popular">Più richiesto</div>
+          <span>Da</span><strong>€89</strong><small>+ eventuali ricambi</small>
+          <h3>Tagliando essenziale</h3>
+          <p>Olio, filtro e controllo dei principali livelli.</p>
+        </article>
+        <article class="price-card">
+          <span>Da</span><strong>€49</strong><small>+ costo intervento</small>
+          <h3>Ritiro e riconsegna</h3>
+          <p>Presa in carico sicura in tutta Milano.</p>
+        </article>
+      </div>
+      <p class="price-note">Il prezzo finale dipende dal modello dell’auto e dai ricambi necessari.</p>
+    </section>
+
+    <section class="mechanic-story" id="chi-sono">
+      <div class="story-copy">
+        <span class="section-kicker light">Il tuo meccanico di fiducia</span>
+        <blockquote>“Tratto ogni auto come se fosse la mia, e ogni cliente come un vicino di casa.”</blockquote>
+        <p>Sono Philip, meccanico certificato con oltre 15 anni di esperienza. Ho creato Badi Garage per rendere la manutenzione dell’auto più semplice, onesta e umana.</p>
+        <div class="signature">Philip <span>— Meccanico & fondatore</span></div>
+      </div>
+      <div class="story-image">
+        <div class="story-placeholder" role="img" aria-label="Foto segnaposto di Philip">
+          <span>P</span>
+          <small>Foto del meccanico</small>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>“Servizio impeccabile. Philip è arrivato puntuale, mi ha spiegato tutto e ha risolto il problema senza che dovessi perdere una giornata.”</p>
+        <div><strong>Giulia B.</strong><span>Cliente verificata · Milano</span></div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div>
+        <span class="section-kicker">La tua auto merita attenzione</span>
+        <h2>Pronto a ripartire?</h2>
+        <p>Raccontaci di cosa hai bisogno. Ti rispondiamo entro 15 minuti durante l’orario di servizio.</p>
+      </div>
+      <button class="button open-booking" type="button">Prenota un intervento <span>↗</span></button>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand brand-light" href="#top">
+      <span class="brand-mark"><span></span></span>
+      <span>Badi<span>Garage</span></span>
+    </a>
+    <p>Servizio mobile a Milano e provincia · Lun–Sab, 08:00–19:00</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Cookie</a>
+      <a href="mailto:info@badigarage.it">Email</a>
+      <a href="https://wa.me/390212345678">WhatsApp</a>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/390212345678?text=Ciao%2C%20vorrei%20informazioni%20per%20la%20mia%20auto" aria-label="Contattaci su WhatsApp">◔</a>
+
+  <dialog class="booking-modal" id="booking-modal">
+    <button class="modal-close" type="button" aria-label="Chiudi">×</button>
+    <div class="modal-heading">
+      <span class="section-kicker">Prenota in 2 minuti</span>
+      <h2>Come possiamo aiutarti?</h2>
+      <p>Lascia i tuoi dati. Ti contatteremo per confermare disponibilità e preventivo.</p>
+    </div>
+    <form id="booking-form">
+      <div class="form-row">
+        <label>Nome e cognome<input name="name" type="text" placeholder="Mario Rossi" required></label>
+        <label>Telefono<input name="phone" type="tel" placeholder="+39 333 000 0000" required></label>
+      </div>
+      <div class="form-row">
+        <label>Marca e modello<input name="car" type="text" placeholder="Fiat 500, 2020" required></label>
+        <label>CAP<input name="postcode" type="text" inputmode="numeric" maxlength="5" placeholder="20121" required></label>
+      </div>
+      <label>Tipo di servizio
+        <select name="service">
+          <option>Meccanico a domicilio</option>
+          <option>Ritiro e riconsegna</option>
+          <option>Urgenza su strada</option>
+          <option>Moto e scooter</option>
+          <option>Camion e veicoli commerciali</option>
+          <option>Climatizzazione auto e camion</option>
+          <option>Non sono sicuro</option>
+        </select>
+      </label>
+      <div class="form-row">
+        <label>Data appuntamento<input name="date" type="date" required></label>
+        <label>Orario disponibile
+          <select name="time" required disabled>
+            <option value="">Seleziona prima una data</option>
+          </select>
+        </label>
+      </div>
+      <label>Descrivi brevemente il problema<textarea name="problem" rows="3" placeholder="Spia accesa, rumore, auto che non parte..."></textarea></label>
+      <label class="bot-field" aria-hidden="true">Azienda<input name="company" type="text" tabindex="-1" autocomplete="off"></label>
+      <label class="privacy-check"><input type="checkbox" required> <span>Accetto l’informativa privacy e di essere ricontattato.</span></label>
+      <p class="form-error" role="alert" hidden></p>
+      <button class="button form-submit" type="submit">Invia la richiesta <span>→</span></button>
+    </form>
+    <div class="form-success" hidden>
+      <span>✓</span>
+      <h2>Richiesta ricevuta!</h2>
+      <p>Grazie. Ti ricontatteremo al più presto per confermare l’appuntamento.</p>
+      <button class="button success-close" type="button">Perfetto</button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
