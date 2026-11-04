@@ -248,7 +248,10 @@ function showFormError(message) {
   formError.hidden = false;
 }
 
+let availabilityRequestId = 0;
+
 async function loadAvailableTimes() {
+  const requestId = ++availabilityRequestId;
   formError.hidden = true;
   resetTimeField(languageSelect.value === "en" ? "Loading times..." : "Caricamento orari...");
 
@@ -260,6 +263,7 @@ async function loadAvailableTimes() {
   try {
     const response = await fetch(`/api/availability?date=${encodeURIComponent(dateField.value)}`);
     const result = await response.json();
+    if (requestId !== availabilityRequestId) return;
     if (!response.ok) throw new Error(result.error);
 
     timeField.innerHTML = "";
@@ -284,7 +288,9 @@ async function loadAvailableTimes() {
       timeField.append(option);
     });
     timeField.disabled = false;
+    formError.hidden = true;
   } catch {
+    if (requestId !== availabilityRequestId) return;
     resetTimeField(languageSelect.value === "en"
       ? "Times unavailable"
       : "Orari non disponibili");
